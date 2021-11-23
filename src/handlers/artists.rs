@@ -48,7 +48,7 @@ pub fn handler(key: Key, app: &mut App) {
         app.push_navigation_stack(RouteId::Artist, ActiveBlock::ArtistBlock);
       }
     }
-    Key::Char('D') => app.user_unfollow_artists(ActiveBlock::AlbumList),
+    //Key::Char('D') => app.user_unfollow_artists(ActiveBlock::AlbumList),
     Key::Char('e') => {
       let artists = app.artists.to_owned();
       let artist = artists.get(app.artists_list_index);

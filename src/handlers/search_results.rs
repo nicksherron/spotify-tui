@@ -512,30 +512,30 @@ pub fn handler(key: Key, app: &mut App) {
       SearchResultBlock::ShowSearch => app.user_follow_show(ActiveBlock::SearchResultBlock),
       SearchResultBlock::Empty => {}
     },
-    Key::Char('D') => match app.search_results.selected_block {
-      SearchResultBlock::AlbumSearch => {
-        app.current_user_saved_album_delete(ActiveBlock::SearchResultBlock)
-      }
-      SearchResultBlock::SongSearch => {}
-      SearchResultBlock::ArtistSearch => app.user_unfollow_artists(ActiveBlock::SearchResultBlock),
-      SearchResultBlock::PlaylistSearch => {
-        if let (Some(playlists), Some(selected_index)) = (
-          &app.search_results.playlists,
-          app.search_results.selected_playlists_index,
-        ) {
-          let selected_playlist = &playlists.items[selected_index].name;
-          app.dialog = Some(selected_playlist.clone());
-          app.confirm = false;
-
-          app.push_navigation_stack(
-            RouteId::Dialog,
-            ActiveBlock::Dialog(DialogContext::PlaylistSearch),
-          );
-        }
-      }
-      SearchResultBlock::ShowSearch => app.user_unfollow_show(ActiveBlock::SearchResultBlock),
-      SearchResultBlock::Empty => {}
-    },
+    //Key::Char('D') => match app.search_results.selected_block {
+    //  SearchResultBlock::AlbumSearch => {
+    //    app.current_user_saved_album_delete(ActiveBlock::SearchResultBlock)
+    //  }
+    //  SearchResultBlock::SongSearch => {}
+    //  SearchResultBlock::ArtistSearch => app.user_unfollow_artists(ActiveBlock::SearchResultBlock),
+    //  SearchResultBlock::PlaylistSearch => {
+    //    if let (Some(playlists), Some(selected_index)) = (
+    //      &app.search_results.playlists,
+    //      app.search_results.selected_playlists_index,
+    //    ) {
+    //      let selected_playlist = &playlists.items[selected_index].name;
+    //      app.dialog = Some(selected_playlist.clone());
+    //      app.confirm = false;
+    //
+    //      app.push_navigation_stack(
+    //        RouteId::Dialog,
+    //        ActiveBlock::Dialog(DialogContext::PlaylistSearch),
+    //      );
+    //    }
+    //  }
+    //  SearchResultBlock::ShowSearch => app.user_unfollow_show(ActiveBlock::SearchResultBlock),
+    //  SearchResultBlock::Empty => {}
+    //},
     Key::Char('r') => handle_recommended_tracks(app),
     _ if key == app.user_config.keys.add_item_to_queue => handle_add_item_to_queue(app),
     // Add `s` to "see more" on each option

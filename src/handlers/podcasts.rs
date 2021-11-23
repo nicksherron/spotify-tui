@@ -49,7 +49,7 @@ pub fn handler(key: Key, app: &mut App) {
     }
     k if k == app.user_config.keys.next_page => app.get_current_user_saved_shows_next(),
     k if k == app.user_config.keys.previous_page => app.get_current_user_saved_shows_previous(),
-    Key::Char('D') => app.user_unfollow_show(ActiveBlock::Podcasts),
+    //Key::Char('D') => app.user_unfollow_show(ActiveBlock::Podcasts),
     _ => {}
   }
 }

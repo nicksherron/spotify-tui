@@ -301,11 +301,11 @@ pub fn handler(key: Key, app: &mut App) {
         ArtistBlock::RelatedArtists => app.user_follow_artists(ActiveBlock::ArtistBlock),
         _ => (),
       },
-      Key::Char('D') => match artist.artist_selected_block {
-        ArtistBlock::Albums => app.current_user_saved_album_delete(ActiveBlock::ArtistBlock),
-        ArtistBlock::RelatedArtists => app.user_unfollow_artists(ActiveBlock::ArtistBlock),
-        _ => (),
-      },
+      //Key::Char('D') => match artist.artist_selected_block {
+      //  ArtistBlock::Albums => app.current_user_saved_album_delete(ActiveBlock::ArtistBlock),
+      //  ArtistBlock::RelatedArtists => app.user_unfollow_artists(ActiveBlock::ArtistBlock),
+      //  _ => (),
+      //},
       _ if key == app.user_config.keys.add_item_to_queue => {
         if let ArtistBlock::TopTracks = artist.artist_selected_block {
           if let Some(track) = artist.top_tracks.get(artist.selected_top_track_index) {

@@ -71,19 +71,19 @@ pub fn handler(key: Key, app: &mut App) {
         }
       };
     }
-    Key::Char('D') => {
-      if let (Some(playlists), Some(selected_index)) = (&app.playlists, app.selected_playlist_index)
-      {
-        let selected_playlist = &playlists.items[selected_index].name;
-        app.dialog = Some(selected_playlist.clone());
-        app.confirm = false;
-
-        app.push_navigation_stack(
-          RouteId::Dialog,
-          ActiveBlock::Dialog(DialogContext::PlaylistWindow),
-        );
-      }
-    }
+    //Key::Char('D') => {
+    //  if let (Some(playlists), Some(selected_index)) = (&app.playlists, app.selected_playlist_index)
+    //  {
+    //    let selected_playlist = &playlists.items[selected_index].name;
+    //    app.dialog = Some(selected_playlist.clone());
+    //    app.confirm = false;
+    //
+    //    app.push_navigation_stack(
+    //      RouteId::Dialog,
+    //      ActiveBlock::Dialog(DialogContext::PlaylistWindow),
+    //    );
+    //  }
+    //}
     _ => {}
   }
 }
